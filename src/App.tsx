@@ -1,6 +1,10 @@
+import Navbar from "#components/Navbar";
+
 const App = () => {
     return (
-       <h1 className="text-3xl font-bold underline">Welcome to MacOS Portfolio</h1>
+       <main>
+           <Navbar/>
+       </main>
     )
 }
 export default App
