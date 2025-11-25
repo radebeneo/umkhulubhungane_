@@ -24,17 +24,17 @@ const setupTextHover = (container, type) => {
     const {min, max, default: base} = FONT_WEIGHTS[type];
 
     const animateLetter = (letter, weight, duration = 0.25) => {
-        return gsap.to(letter, {duration, ease: "power2.out", fontVariationSettings: `'wght' ${weight}`});
+        return gsap.to(letter, {duration, ease: "power2.out", fontVariationSettings: `'wght' ${weight}`, overwrite: "auto"});
     }
 
     const handleMouseMove = (e) => {
-        const {left} = container.getBoundingClientRect();
-        const mouseX = e.clientX - left;
+        // const {left} = container.getBoundingClientRect();
+        const mouseX = e.clientX;
 
         letters.forEach((letter) => {
             const { left: l, width: w } = letter.getBoundingClientRect();
             const distance = Math.abs(mouseX - l + w / 2);
-            const intensity = Math.exp(-(distance ** 2) / 20000);
+            const intensity = Math.exp(-(distance ** 2) / 10000);
 
             animateLetter(letter, min + (max - min) * intensity);
         })
