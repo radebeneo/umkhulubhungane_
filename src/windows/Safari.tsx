@@ -43,7 +43,7 @@ const Safari = () => {
                             <div className="content">
                                 <p>{date}</p>
                                 <h3>{title}</h3>
-                                <a href={link} target="_blank" rel=" noopener noreferrer">
+                                <a href={link} target="_blank" rel="noopener noreferrer">
                                     Read more
                                 </a>
                             </div>
