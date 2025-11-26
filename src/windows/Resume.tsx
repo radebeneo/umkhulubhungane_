@@ -1,7 +1,7 @@
 import WindowWrapper from "#hoc/WindowWrapper";
 import {WindowControls} from "#components";
 import {Download} from "lucide-react";
-import { pdfjs } from 'react-pdf';
+import { Document, Page, pdfjs } from 'react-pdf';
 
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
@@ -21,6 +21,9 @@ const Resume = () => {
                 </a>
             </div>
 
+            <Document file="files/resume.pdf" >
+                <Page pageNumber={1} renderTextLayer renderAnnotationLayer />
+            </Document>
 
         </>
     )
