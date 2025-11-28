@@ -22,7 +22,7 @@ const Text = () => {
                     <img
                         src={image}
                         alt={name || "text file image"}
-                        className="w-full h-auto  rounded "
+                        className="w-full h-auto rounded "
                     />
                 )}
 
