@@ -3,27 +3,28 @@ import gsap from "gsap";
 import { Draggable} from "gsap/Draggable";
 
 import {Navbar, Welcome, Dock, Home} from "#components";
-import {Terminal, Safari, Resume, Finder, Text, Image, Contact} from "#windows";
+import {Terminal, Safari, Resume, Finder, Text, Image, Contact, Photos} from "#windows";
 
 gsap.registerPlugin(Draggable);
 
 const App = () => {
     return (
-       <main>
-           <Navbar/>
-           <Welcome/>
-           <Dock/>
+        <main>
+            <Navbar/>
+            <Welcome/>
+            <Dock/>
 
-           <Terminal />
-           <Safari />
-           <Resume />
-           <Finder />
-           <Text />
-           <Image />
-           <Contact />
+            <Terminal/>
+            <Safari/>
+            <Resume/>
+            <Finder/>
+            <Text/>
+            <Image/>
+            <Contact/>
+            <Photos/>
 
-           <Home />
-       </main>
-    )
+            <Home/>
+        </main>
+    );
 }
 export default App
