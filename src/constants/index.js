@@ -9,7 +9,6 @@ const navLinks = [
         id: 4, name: "Resume", type: "resume",
     },
 ];
-
 const navIcons = [
     {
         id: 1,
@@ -28,7 +27,6 @@ const navIcons = [
         img: "/icons/mode.svg",
     },
 ];
-
 const dockApps = [
     {
         id: "finder",
@@ -67,13 +65,11 @@ const dockApps = [
         canOpen: false,
     },
 ];
-
 const blogPosts = [
     {
         id: 1,
         date: "Sep 2, 2025",
-        title:
-            "TypeScript Explained: What It Is, Why It Matters, and How to Master It",
+        title: "TypeScript Explained: What It Is, Why It Matters, and How to Master It",
         image: "/images/blog1.png",
         link: "https://jsmastery.com/blog/typescript-explained-what-it-is-why-it-matters-and-how-to-master-it",
     },
@@ -92,7 +88,6 @@ const blogPosts = [
         link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-gsap-animations",
     },
 ];
-
 const techStack = [
     {
         category: "Frontend",
@@ -100,7 +95,7 @@ const techStack = [
     },
     {
         category: "",
-        items: ["ASP.NET Razor", ],
+        items: ["ASP.NET Razor",],
     },
     {
         category: "Mobile",
@@ -123,7 +118,6 @@ const techStack = [
         items: ["Git", "GitHub", "Docker"],
     },
 ];
-
 const socials = [
     {
         id: 1,
@@ -154,7 +148,6 @@ const socials = [
         link: "https://www.linkedin.com/radebeneo",
     },
 ];
-
 const photosLinks = [
     {
         id: 1,
@@ -182,7 +175,6 @@ const photosLinks = [
         title: "Favorites",
     },
 ];
-
 const gallery = [
     {
         id: 1,
@@ -201,18 +193,7 @@ const gallery = [
         img: "/images/gal4.png",
     },
 ];
-
-export {
-    navLinks,
-    navIcons,
-    dockApps,
-    blogPosts,
-    techStack,
-    socials,
-    photosLinks,
-    gallery,
-};
-
+export { navLinks, navIcons, dockApps, blogPosts, techStack, socials, photosLinks, gallery, };
 const WORK_LOCATION = {
     id: 1,
     type: "work",
@@ -271,7 +252,6 @@ const WORK_LOCATION = {
                 },
             ],
         },
-
         // ▶ Project 2
         {
             id: 6,
@@ -323,7 +303,6 @@ const WORK_LOCATION = {
                 },
             ],
         },
-
         // ▶ Project 3
         {
             id: 7,
@@ -377,7 +356,6 @@ const WORK_LOCATION = {
         },
     ],
 };
-
 const ABOUT_LOCATION = {
     id: 2,
     type: "about",
@@ -430,7 +408,6 @@ const ABOUT_LOCATION = {
         },
     ],
 };
-
 const RESUME_LOCATION = {
     id: 3,
     type: "resume",
@@ -444,11 +421,9 @@ const RESUME_LOCATION = {
             icon: "/images/pdf.png",
             kind: "file",
             fileType: "pdf",
-
         },
     ],
 };
-
 const TRASH_LOCATION = {
     id: 4,
     type: "trash",
@@ -476,27 +451,14 @@ const TRASH_LOCATION = {
         },
     ],
 };
-
 export const locations = {
     work: WORK_LOCATION,
     about: ABOUT_LOCATION,
     resume: RESUME_LOCATION,
     trash: TRASH_LOCATION,
 };
-
 const INITIAL_Z_INDEX = 1000;
-
-export interface WindowData {
-    isOpen: boolean;
-    zIndex: number;
-    data: any;
-}
-
-export interface WindowConfig {
-    [key: string]: WindowData;
-}
-
-const WINDOW_CONFIG: WindowConfig = {
+const WINDOW_CONFIG = {
     finder: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
     contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
     resume: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
@@ -506,5 +468,4 @@ const WINDOW_CONFIG: WindowConfig = {
     txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
     imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
 };
-
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };

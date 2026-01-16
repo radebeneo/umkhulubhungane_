@@ -11,7 +11,7 @@ const Home = () => {
     const { setActiveLocation } = useLocationStore()
     const { openWindow } = useWindowStore()
 
-    const handleOpenProjectFinder = (project) => {
+    const handleOpenProjectFinder = (project: any) => {
         setActiveLocation(project)
         openWindow("finder")
     }

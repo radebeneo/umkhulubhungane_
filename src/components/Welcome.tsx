@@ -2,10 +2,12 @@ import {useRef} from "react";
 import gsap from "gsap";
 import {useGSAP} from "@gsap/react";
 
-const FONT_WEIGHTS= {
+const FONT_WEIGHTS = {
     subtitle: {min: 100, max: 400, default: 100},
     title: {min: 400, max: 900, default: 400}
-}
+} as const;
+
+type FontType = keyof typeof FONT_WEIGHTS;
 
 const renderText = (text: string, className: string | undefined, baseWeight = 400) => {
     return [...text].map((char, i) => (
@@ -15,7 +17,7 @@ const renderText = (text: string, className: string | undefined, baseWeight = 40
     ))
 }
 
-const setupTextHover = (container, type) => {
+const setupTextHover = (container: HTMLElement | null, type: FontType) => {
 
     if(!container) return () => {};
 
@@ -23,11 +25,11 @@ const setupTextHover = (container, type) => {
 
     const {min, max, default: base} = FONT_WEIGHTS[type];
 
-    const animateLetter = (letter, weight, duration = 0.25) => {
+    const animateLetter = (letter: HTMLElement, weight: number, duration = 0.25) => {
         return gsap.to(letter, {duration, ease: "power2.out", fontVariationSettings: `'wght' ${weight}`, overwrite: "auto"});
     }
 
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
         // const {left} = container.getBoundingClientRect();
         const mouseX = e.clientX;
 

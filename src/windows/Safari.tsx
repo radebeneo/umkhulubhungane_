@@ -1,4 +1,4 @@
-import {ChevronLeft, ChevronRight, Copy, MoveRight, PanelLeft, Plus, Search, Share, ShieldHalf} from "lucide-react";
+import {ChevronLeft, ChevronRight, Copy, PanelLeft, Plus, Search, Share, ShieldHalf} from "lucide-react";
 
 import {WindowControls} from "#components";
 import WindowWrapper from "#hoc/WindowWrapper";

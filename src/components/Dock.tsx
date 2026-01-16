@@ -7,7 +7,7 @@ import useWindowStore from "#store/window";
 
 
 const Dock = () => {
-    const { openWindow, closeWindow, focusWindow, windows } = useWindowStore()
+    const { openWindow, closeWindow, windows } = useWindowStore()
 
     const dockRef = useRef<HTMLDivElement>(null);
 
@@ -17,7 +17,7 @@ const Dock = () => {
 
         const icons = dock.querySelectorAll(".dock-icon")
 
-        const animateIcons = (mouseX) => {
+        const animateIcons = (mouseX: number) => {
             const {left} = dock.getBoundingClientRect();
 
             icons.forEach((icon) => {
@@ -30,7 +30,7 @@ const Dock = () => {
             })
         }
 
-        const handleMouseMove = (e) => {
+        const handleMouseMove = (e: MouseEvent) => {
             const {left} = dock.getBoundingClientRect();
             animateIcons(e.clientX - left);
         }
@@ -48,7 +48,7 @@ const Dock = () => {
     }, [])
 
 
-    const toggleApp = (app) => {
+    const toggleApp = (app: { id: string; canOpen: boolean }) => {
         if (!app.canOpen) return;
 
         const window = windows[app.id];

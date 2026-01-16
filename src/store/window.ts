@@ -1,8 +1,16 @@
 import { create } from 'zustand';
 import {immer} from "zustand/middleware/immer";
-import {INITIAL_Z_INDEX, WINDOW_CONFIG} from "#constants";
+import {INITIAL_Z_INDEX, WINDOW_CONFIG, type WindowConfig} from "#constants";
 
-const useWindowStore = create(immer((set) => ({
+interface WindowState {
+    windows: WindowConfig;
+    nextZIndex: number;
+    openWindow: (windowKey: string, data?: any) => void;
+    closeWindow: (windowKey: string) => void;
+    focusWindow: (windowKey: string) => void;
+}
+
+const useWindowStore = create<WindowState>()(immer((set) => ({
         windows: WINDOW_CONFIG,
         nextZIndex: INITIAL_Z_INDEX + 1,
 

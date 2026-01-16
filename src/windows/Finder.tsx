@@ -14,7 +14,7 @@ const Finder = () => {
 
     const {activeLocation, setActiveLocation} = useLocationStore()
 
-    const openItem = (item) => {
+    const openItem = (item: any) => {
         if(item.fileType === "pdf") return openWindow("resume")
         if(item.kind === "folder") return setActiveLocation(item)
         if(["fig", "url"].includes(item.fileType) && item.href) return window.open(item.href, "_blank")
@@ -22,11 +22,11 @@ const Finder = () => {
         openWindow(`${item.fileType}${item.kind}`, item)
     }
 
-    const renderList = (name, items) => (
+    const renderList = (name: string, items: any[]) => (
         <div>
             <h3>{name}</h3>
             <ul>
-                {items.map((item) => (
+                {items.map((item: any) => (
                     <li key={item.id} onClick={() =>
                         setActiveLocation(item)} className={clsx(item.id === activeLocation.id ? "active" : "not-active")}>
                         <img src={item.icon} alt={item.name} className="w-4"/>
@@ -45,10 +45,10 @@ const Finder = () => {
             <div className="bg-white flex h-full">
                 <div className="sidebar">
                     {renderList("Favourites", Object.values(locations))}
-                    {renderList("Work", locations.work.children)}
+                    {renderList("Work", (locations.work as any).children)}
                 </div>
                 <ul className="content">
-                    {activeLocation.children.map((item) => (
+                    {activeLocation.children?.map((item: any) => (
                         <li key={item.id} className={item.position} onClick={() => openItem(item)}>
                             <img src={item.icon} alt={item.name} />
                             <p>{item.name}</p>
