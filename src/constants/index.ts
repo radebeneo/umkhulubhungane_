@@ -186,7 +186,7 @@ const photosLinks = [
 const gallery = [
     {
         id: 1,
-        img: "/images/gal1.png",
+        img: "/images/neo.jpg",
     },
     {
         id: 2,
@@ -194,7 +194,7 @@ const gallery = [
     },
     {
         id: 3,
-        img: "/images/gal3.png",
+        img: "/images/neo_aws.png",
     },
     {
         id: 4,
