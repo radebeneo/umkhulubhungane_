@@ -40,13 +40,13 @@ const Safari = () => {
                                 <img src={image} alt={title} />
                             </div>
 
-                            <div className="content">
-                                <p>{date}</p>
-                                <h3>{title}</h3>
-                                <a href={link} target="_blank" rel="noopener noreferrer">
-                                    Read more
-                                </a>
-                            </div>
+                            {/*<div className="content">*/}
+                            {/*    <p>{date}</p>*/}
+                            {/*    <h3>{title}</h3>*/}
+                            {/*    <a href={link} target="_blank" rel="noopener noreferrer">*/}
+                            {/*        Read more*/}
+                            {/*    </a>*/}
+                            {/*</div>*/}
                         </div>
                     ))}
                 </div>
