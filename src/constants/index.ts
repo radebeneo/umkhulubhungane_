@@ -71,14 +71,14 @@ const dockApps = [
 const blogPosts = [
     {
         id: 1,
-        date: "Sep 2, 2025",
+        date: "19 Jan, 2026",
         title:
             "TypeScript Explained: What It Is, Why It Matters, and How to Master It",
         image: "/images/blog1.png",
-        link: "https://jsmastery.com/blog/typescript-explained-what-it-is-why-it-matters-and-how-to-master-it",
+        link: "https://www.instagram.com/p/DTqwHPqisD7/?img_index=1",
     },
     {
-        id: 2,
+        id: 2, 
         date: "Aug 28, 2025",
         title: "The Ultimate Guide to Mastering Three.js for 3D Development",
         image: "/images/blog2.png",
