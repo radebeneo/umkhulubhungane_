@@ -292,7 +292,9 @@ const WORK_LOCATION = {
                     fileType: "txt",
                     position: "top-5 right-10",
                     description: [
-                        "",
+                        "A modern, full-stack library management application designed for universities. This platform allows students to browse, borrow, and manage books while providing administrators with tools to oversee library operations.",
+                        "Built with Next.js, TypeScript, and Postgres, the University Library Management System is a production-grade platform featuring a public-facing app and an admin interface.",
+                        "It offers advanced functionalities like seamless book borrowing with reminders and receipts, robust user management, automated workflows, and a modern, optimized tech stack for real-world scalability.",
                     ],
                 },
                 {
@@ -375,6 +377,59 @@ const WORK_LOCATION = {
                 //     href: "https://google.com",
                 //     position: "top-60 right-20",
                 // },
+            ],
+        },
+
+        // ▶ Project 4
+        {
+            id: 8,
+            name: "Financial Fraud Detection Project (Data Science)",
+            icon: "/images/folder.png",
+            kind: "folder",
+            position: "top-25 left-50",
+            windowPosition: "top-[48vh] left-2",
+            children: [
+                {
+                    id: 1,
+                    name: "Financial Fraud Detection Project.txt",
+                    icon: "/images/txt.png",
+                    kind: "file",
+                    fileType: "txt",
+                    position: "top-5 left-10",
+                    description: [
+                        "This project presents a comprehensive analysis and machine learning pipeline for detecting fraudulent financial transactions.",
+                        "The dataset used in this project represents a synthetic set of financial transactions designed to simulate real-world mobile money activities.",
+                        "The primary goal is to identify fraudulent transactions among millions of legitimate ones, which is a critical task for financial institutions to prevent losses and ensure security.",
+                        "This project successfully developed a machine learning-based fraud detection system capable of identifying high-risk transactions among millions of records."
+                    ],
+                },
+                {
+                    id: 2,
+                    name: "fraud-detection.com",
+                    icon: "/images/safari.png",
+                    kind: "file",
+                    fileType: "url",
+                    href: "https://github.com/radebeneo/university-library",
+                    position: "top-10 right-20",
+                },
+                // {
+                //     id: 4,
+                //     name: "(bite)-food-delivery-app.png",
+                //     icon: "/images/image.png",
+                //     kind: "file",
+                //     fileType: "img",
+                //     position: "top-52 right-80",
+                //     imageUrl: "/images/project-3.png",
+                // },
+                {
+                    id: 5,
+                    name: "fraud-detection.streamlit.app",
+                    icon: "/images/plain.png",
+                    kind: "file",
+                    fileType: "fig",
+                    href: "https://fraud-detection-v1.streamlit.app/",
+                    position: "top-60 right-20",
+                },
             ],
         },
     ],
