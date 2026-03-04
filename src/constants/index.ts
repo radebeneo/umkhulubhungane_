@@ -409,7 +409,7 @@ const WORK_LOCATION = {
                     icon: "/images/safari.png",
                     kind: "file",
                     fileType: "url",
-                    href: "https://github.com/radebeneo/university-library",
+                    href: "https://github.com/radebeneo/fraud_detection",
                     position: "top-10 right-20",
                 },
                 // {
