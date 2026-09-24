@@ -37,7 +37,11 @@ body {
     }
 
     nav {
-        @apply flex justify-between items-center bg-white/50 backdrop-blur-3xl p-2 px-5 select-none;
+        @apply flex justify-between items-center p-2 px-5 text-white select-none;
+
+        img {
+            @apply brightness-0 invert;
+        }
 
         div {
             @apply flex items-center max-sm:w-full max-sm:justify-center gap-5;
@@ -56,7 +60,7 @@ body {
         }
 
         time {
-            @apply text-sm font-medium text-black;
+            @apply text-sm font-medium text-white;
         }
     }
 }
