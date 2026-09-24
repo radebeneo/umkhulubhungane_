@@ -31,12 +31,8 @@ const Dock = () => {
         }
 
         const handleMouseMove = (e: MouseEvent) => {
-            const {left, top} = dock.getBoundingClientRect();
-            const mouseX = e.clientX - left;
-
-            dock.style.setProperty("--glass-x", `${mouseX}px`);
-            dock.style.setProperty("--glass-y", `${e.clientY - top}px`);
-            animateIcons(mouseX);
+            const {left} = dock.getBoundingClientRect();
+            animateIcons(e.clientX - left);
         }
 
         const resetIcons = () => icons.forEach((icon) => gsap.to(icon, {scale: 1, y: 0, duration: 0.3, ease: "power1.out"}));
@@ -74,6 +70,15 @@ const Dock = () => {
 
     return (
         <section id="dock">
+           <svg className="dock-filter" aria-hidden="true" focusable="false">
+               <defs>
+                   <filter id="dock-liquid-glass-filter" x="-20%" y="-40%" width="140%" height="180%" colorInterpolationFilters="sRGB">
+                       <feTurbulence type="fractalNoise" baseFrequency="0.01 0.08" numOctaves={2} seed={7} result="glassNoise" />
+                       <feGaussianBlur in="glassNoise" stdDeviation="1.4" result="softNoise" />
+                       <feDisplacementMap in="SourceGraphic" in2="softNoise" scale={18} xChannelSelector="R" yChannelSelector="G" />
+                   </filter>
+               </defs>
+           </svg>
            <div ref={dockRef} className="dock-container">
                {dockApps.map(({id, name, icon, canOpen}) =>
                <div key={id} className="relative flex justify-center">
