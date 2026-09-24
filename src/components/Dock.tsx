@@ -31,8 +31,12 @@ const Dock = () => {
         }
 
         const handleMouseMove = (e: MouseEvent) => {
-            const {left} = dock.getBoundingClientRect();
-            animateIcons(e.clientX - left);
+            const {left, top} = dock.getBoundingClientRect();
+            const mouseX = e.clientX - left;
+
+            dock.style.setProperty("--glass-x", `${mouseX}px`);
+            dock.style.setProperty("--glass-y", `${e.clientY - top}px`);
+            animateIcons(mouseX);
         }
 
         const resetIcons = () => icons.forEach((icon) => gsap.to(icon, {scale: 1, y: 0, duration: 0.3, ease: "power1.out"}));

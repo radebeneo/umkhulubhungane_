@@ -82,7 +82,51 @@ body {
         @apply absolute bottom-5 left-1/2 -translate-x-1/2 z-50 select-none max-sm:hidden;
 
         .dock-container {
-            @apply bg-white/20 backdrop-blur-md justify-between rounded-2xl p-1.5 flex items-end gap-1.5;
+            @apply justify-between rounded-2xl p-1.5 flex items-end gap-1.5;
+            --glass-x: 50%;
+            --glass-y: 0%;
+            position: relative;
+            isolation: isolate;
+            background:
+                linear-gradient(135deg, rgb(255 255 255 / 0.24), rgb(255 255 255 / 0.08) 45%, rgb(214 235 255 / 0.15)),
+                rgb(255 255 255 / 0.08);
+            border: 1px solid rgb(255 255 255 / 0.42);
+            box-shadow:
+                inset 0 1px 0 rgb(255 255 255 / 0.72),
+                inset 0 -1px 0 rgb(255 255 255 / 0.16),
+                0 18px 45px rgb(19 31 55 / 0.24),
+                0 4px 12px rgb(19 31 55 / 0.12);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                pointer-events: none;
+                border-radius: inherit;
+            }
+
+            &::before {
+                z-index: 0;
+                inset: 0;
+                background:
+                    radial-gradient(circle 90px at var(--glass-x) var(--glass-y), rgb(255 255 255 / 0.58), transparent 72%),
+                    linear-gradient(115deg, rgb(255 255 255 / 0.2), transparent 36% 68%, rgb(169 218 255 / 0.18));
+                box-shadow: inset 0 0 18px rgb(255 255 255 / 0.1);
+            }
+
+            &::after {
+                z-index: 0;
+                inset: 2px;
+                border: 1px solid rgb(255 255 255 / 0.16);
+                background: linear-gradient(to bottom, rgb(255 255 255 / 0.16), transparent 38% 70%, rgb(128 190 255 / 0.08));
+            }
+
+            > div {
+                position: relative;
+                z-index: 1;
+            }
         }
 
         .tooltip {
