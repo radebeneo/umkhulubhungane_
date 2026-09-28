@@ -1,10 +1,12 @@
 import dayjs from "dayjs";
 import {navIcons, navLinks} from "#constants";
 import useWindowStore from "#store/window";
+import useThemeStore from "#store/theme";
 
 const Navbar = () => {
 
     const {openWindow} = useWindowStore()
+    const {toggleDarkMode} = useThemeStore()
 
 
     return (
@@ -24,7 +26,12 @@ const Navbar = () => {
                 <ul>
                     {navIcons.map(({id, img}) => (
                         <li key={id}>
-                            <img src={img} className="icon-hover" alt={`icon-${id}`}/>
+                            <img
+                                src={img}
+                                className={img.endsWith("mode.svg") ? "icon-hover cursor-pointer" : "icon-hover"}
+                                alt={`icon-${id}`}
+                                onClick={img.endsWith("mode.svg") ? toggleDarkMode : undefined}
+                            />
                         </li>
                     ))}
                 </ul>

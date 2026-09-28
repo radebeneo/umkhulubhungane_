@@ -5,11 +5,16 @@ import { Tooltip} from "react-tooltip";
 import {dockApps, locations} from "#constants";
 import useWindowStore from "#store/window";
 import useLocationStore from "#store/location";
+import useThemeStore from "#store/theme";
 
 
 const Dock = () => {
     const { openWindow, closeWindow, windows } = useWindowStore()
     const { setActiveLocation } = useLocationStore()
+    const { isDarkMode } = useThemeStore()
+
+    const getIcon = (icon: string, hasDark?: boolean) =>
+        isDarkMode && hasDark ? icon.replace(/\.svg$/, "-Dark.svg") : icon
 
     const dockRef = useRef<HTMLDivElement>(null);
 
@@ -87,10 +92,10 @@ const Dock = () => {
                </defs>
            </svg>
            <div ref={dockRef} className="dock-container">
-               {dockApps.map(({id, name, icon, canOpen}) =>
+               {dockApps.map(({id, name, icon, canOpen, hasDark}) =>
                <div key={id} className="relative flex justify-center">
                    <button type="button" className="dock-icon" aria-label={name} data-tooltip-id="dock-tooltip" data-tooltip-content={name} data-tooltip-delay-show={150} disabled={!canOpen} onClick={() => toggleApp({id, canOpen})}>
-                         <img src={icon} alt={name} loading="lazy" className={canOpen ? "" : "opacity-60"}/>
+                         <img src={getIcon(icon, hasDark)} alt={name} loading="lazy" className={canOpen ? "" : "opacity-60"}/>
                    </button>
                </div>
                )}

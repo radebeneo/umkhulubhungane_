@@ -1,6 +1,7 @@
 import {Search} from "lucide-react";
 import useLocationStore from "#store/location";
 import useWindowStore from "#store/window";
+import useThemeStore from "#store/theme";
 import clsx from "clsx";
 
 import WindowWrapper from "#hoc/WindowWrapper";
@@ -13,6 +14,10 @@ const Finder = () => {
     const {openWindow} = useWindowStore()
 
     const {activeLocation, setActiveLocation} = useLocationStore()
+    const {isDarkMode} = useThemeStore()
+
+    const getItemIcon = (icon: string) =>
+        isDarkMode && icon === "/images/safari.png" ? "/macOS-27/Safari-Dark.svg" : icon
 
     const openItem = (item: any) => {
         if(item.fileType === "pdf") return openWindow("resume")
@@ -42,7 +47,7 @@ const Finder = () => {
                 <WindowControls target="finder"/>
                 <Search className="icon"/>
             </div>
-            <div className="bg-white flex h-full">
+            <div className="bg-white dark:bg-neutral-900 flex h-full">
                 <div className="sidebar">
                     {renderList("Favourites", Object.values(locations))}
                     {renderList("Work", (locations.work as any).children)}
@@ -50,7 +55,7 @@ const Finder = () => {
                 <ul className="content">
                     {activeLocation.children?.map((item: any) => (
                         <li key={item.id} className={item.position} onClick={() => openItem(item)}>
-                            <img src={item.icon} alt={item.name} />
+                            <img src={getItemIcon(item.icon)} alt={item.name} />
                             <p>{item.name}</p>
                         </li>
                     ))}

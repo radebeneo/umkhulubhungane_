@@ -35,36 +35,42 @@ const dockApps = [
         name: "Portfolio", // was "Finder"
         icon: "/macOS-27/Finder.svg",
         canOpen: true,
+        hasDark: true,
     },
     {
         id: "safari",
         name: "Articles", // was "Safari"
         icon: "/macOS-27/Safari.svg",
         canOpen: true,
+        hasDark: true,
     },
     {
         id: "photos",
         name: "Gallery", // was "Photos"
         icon: "/macOS-27/Gallery.svg",
         canOpen: true,
+        hasDark: true,
     },
     {
         id: "contact",
         name: "Contact", // or "Get in touch"
         icon: "/macOS-27/Contact.svg",
         canOpen: true,
+        hasDark: true,
     },
     {
         id: "terminal",
         name: "Skills", // was "Terminal"
         icon: "/macOS-27/Terminal.svg",
         canOpen: true,
+        hasDark: false,
     },
     {
         id: "trash",
         name: "Archive", // was "Trash"
         icon: "/macOS-27/Archive.svg",
         canOpen: true,
+        hasDark: true,
     },
 ];
 

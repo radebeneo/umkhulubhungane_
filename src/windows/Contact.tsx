@@ -13,7 +13,7 @@ const Contact = () => {
          <div className="p-5 space-y-5 ">
              <img src="/images/neo.svg" alt="contact" className="w-20 rounded-full "/>
              <h3>Let's Connect</h3>
-             <p className="text-base text-gray-800">Got an idea? Or just wanna talk tech? I'm in.</p>
+             <p className="text-base text-gray-800 dark:text-neutral-200">Got an idea? Or just wanna talk tech? I'm in.</p>
 
              <ul>
                  {socials.map(({id, bg, link, icon, text})  => (

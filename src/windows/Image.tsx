@@ -17,7 +17,7 @@ const ImageFile = () => {
         {name && <h2>{name}</h2>}
       </div>
 
-      <div className="p-5 bg-white rounded-lg shadow-lg max-w-2xl mx-auto text-center">
+      <div className="p-5 bg-white dark:bg-neutral-900 rounded-lg shadow-lg max-w-2xl mx-auto text-center">
         {imageUrl && (
           <img
             src={imageUrl}
