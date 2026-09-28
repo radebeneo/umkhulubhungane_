@@ -33,38 +33,38 @@ const dockApps = [
     {
         id: "finder",
         name: "Portfolio", // was "Finder"
-        icon: "finder.png",
+        icon: "/macOS-27/Finder.svg",
         canOpen: true,
     },
     {
         id: "safari",
         name: "Articles", // was "Safari"
-        icon: "safari.png",
+        icon: "/macOS-27/Safari.svg",
         canOpen: true,
     },
     {
         id: "photos",
         name: "Gallery", // was "Photos"
-        icon: "photos.png",
+        icon: "/macOS-27/Gallery.svg",
         canOpen: true,
     },
     {
         id: "contact",
         name: "Contact", // or "Get in touch"
-        icon: "contact.png",
+        icon: "/macOS-27/Contact.svg",
         canOpen: true,
     },
     {
         id: "terminal",
         name: "Skills", // was "Terminal"
-        icon: "terminal.png",
+        icon: "/macOS-27/Terminal.svg",
         canOpen: true,
     },
     {
         id: "trash",
         name: "Archive", // was "Trash"
-        icon: "trash.png",
-        canOpen: false,
+        icon: "/macOS-27/Archive.svg",
+        canOpen: true,
     },
 ];
 
@@ -224,7 +224,7 @@ const WORK_LOCATION = {
         {
             id: 5,
             name: "Subsciption Tracker API - Backend App",
-            icon: "/images/folder.png",
+            icon: "/macOS-27/Folder.svg",
             kind: "folder",
             position: "top-10 left-5", // icon position inside Finder
             windowPosition: "top-[5vh] left-5", // optional: Finder window position
@@ -279,7 +279,7 @@ const WORK_LOCATION = {
         {
             id: 6,
             name: "University Library",
-            icon: "/images/folder.png",
+            icon: "/macOS-27/Folder.svg",
             kind: "folder",
             position: "top-52 right-80",
             windowPosition: "top-[20vh] left-7",
@@ -330,7 +330,7 @@ const WORK_LOCATION = {
         {
             id: 7,
             name: "(bite) Food Delivery App",
-            icon: "/images/folder.png",
+            icon: "/macOS-27/Folder.svg",
             kind: "folder",
             position: "top-10 left-80",
             windowPosition: "top-[33vh] left-7",
@@ -384,7 +384,7 @@ const WORK_LOCATION = {
         {
             id: 8,
             name: "Financial Fraud Detection Project (Data Science)",
-            icon: "/images/folder.png",
+            icon: "/macOS-27/Folder.svg",
             kind: "folder",
             position: "top-25 left-50",
             windowPosition: "top-[48vh] left-2",

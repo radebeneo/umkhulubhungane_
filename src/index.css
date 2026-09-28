@@ -159,7 +159,19 @@ body {
             @apply size-14 3xl:size-20 cursor-pointer;
 
             img {
-                @apply object-cover object-center;
+                @apply size-full object-cover object-center;
+            }
+
+            img[src$='.svg'] {
+                transform: scale(0.83);
+            }
+
+            img[src$='/Archive.svg'] {
+                transform: scale(1.07);
+            }
+
+            img[src$='/Terminal.svg'] {
+                transform: scale(1);
             }
         }
     }
@@ -450,7 +462,7 @@ body {
                 @apply absolute z-0 select-none flex items-center flex-col;
 
                 img {
-                    @apply group-hover:bg-gray-950/10 p-1 rounded-md;
+                    @apply size-16 group-hover:bg-gray-950/10 p-1 rounded-md;
                 }
 
                 p {

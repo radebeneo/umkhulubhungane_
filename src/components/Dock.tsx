@@ -2,12 +2,14 @@ import {useRef} from "react";
 import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
 import { Tooltip} from "react-tooltip";
-import {dockApps} from "#constants";
+import {dockApps, locations} from "#constants";
 import useWindowStore from "#store/window";
+import useLocationStore from "#store/location";
 
 
 const Dock = () => {
     const { openWindow, closeWindow, windows } = useWindowStore()
+    const { setActiveLocation } = useLocationStore()
 
     const dockRef = useRef<HTMLDivElement>(null);
 
@@ -51,17 +53,22 @@ const Dock = () => {
     const toggleApp = (app: { id: string; canOpen: boolean }) => {
         if (!app.canOpen) return;
 
-        const window = windows[app.id];
+        const windowId = app.id === "trash" ? "finder" : app.id;
+        const window = windows[windowId];
 
         if(!window) {
-            console.error(`Window not found for app: ${app.id} `);
+            console.error(`Window not found for app: ${windowId} `);
             return;
         }
 
+        if (app.id === "trash") {
+            setActiveLocation(locations.trash);
+        }
+
         if (window.isOpen) {
-            closeWindow(app.id);
+            closeWindow(windowId);
         } else {
-            openWindow(app.id);
+            openWindow(windowId);
         }
 
         console.log(windows)
@@ -83,7 +90,7 @@ const Dock = () => {
                {dockApps.map(({id, name, icon, canOpen}) =>
                <div key={id} className="relative flex justify-center">
                    <button type="button" className="dock-icon" aria-label={name} data-tooltip-id="dock-tooltip" data-tooltip-content={name} data-tooltip-delay-show={150} disabled={!canOpen} onClick={() => toggleApp({id, canOpen})}>
-                        <img src={`/images/${icon}`} alt={name} loading="lazy" className={canOpen ? "" : "opacity-60"}/>
+                         <img src={icon} alt={name} loading="lazy" className={canOpen ? "" : "opacity-60"}/>
                    </button>
                </div>
                )}
